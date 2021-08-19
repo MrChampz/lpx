@@ -2,8 +2,9 @@ package lpx_test
 
 import (
 	"bufio"
-	"github.com/bmizerany/lpx"
 	"net/http"
+
+	"github.com/MrChampz/lpx"
 )
 
 func Example() {

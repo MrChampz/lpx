@@ -29,8 +29,8 @@ func TestReader(t *testing.T) {
 		t.Errorf("want %q, got %q", w, r.Header())
 	}
 
-	if g := string(r.Bytes()); g != "Hi from Go\n" {
-		t.Errorf("want %q, got %q", g, "Hi from Go\n")
+	if g := string(r.Bytes()); g != "Hi from Go" {
+		t.Errorf("want %q, got %q", "Hi from Go", g)
 	}
 	if r.Err() != nil {
 		t.Errorf("want %v, got %v", nil, r.Err())
@@ -52,8 +52,8 @@ func TestReader(t *testing.T) {
 		t.Errorf("want %q, got %q", w, r.Header())
 	}
 
-	if g := string(r.Bytes()); g != "Hi from Py\n" {
-		t.Errorf("want %q, got %q", g, "Hi from Py\n")
+	if g := string(r.Bytes()); g != "Hi from Py" {
+		t.Errorf("want %q, got %q", "Hi from Py", g)
 	}
 	if r.Err() != nil {
 		t.Errorf("want %v, got %v", nil, r.Err())

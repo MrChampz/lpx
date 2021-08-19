@@ -57,6 +57,9 @@ func (r *Reader) Next() bool {
 		return false
 	}
 
+	// remove an extra byte
+	r.n = r.n - 1
+
 	// header fields
 	r.field(&r.hdr.PrivalVersion) // PRI/VERSION
 	r.field(&r.hdr.Time)          // TIMESTAMP
@@ -81,6 +84,10 @@ func (r *Reader) Next() bool {
 	} else {
 		r.bytes = nil
 	}
+
+	// remove line ending character
+	r.r.ReadBytes('\n')
+
 	return true
 }
 
